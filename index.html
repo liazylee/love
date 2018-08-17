@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="" xml:lang="en" lang="en">
+<head>
+    <title>码成思念</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="style/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="style/jquery.js"></script>
+    <script type="text/javascript" src="style/garden.js"></script>
+    <script type="text/javascript" src="style/functions.js"></script>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments">我想和你虚度时光，比如低头看鱼</span><br />
+                <span class="comments">比如把茶杯留在桌子上，离开</span><br />
+                <span class="comments">浪费它们好看的阴影</span><br />
+                <span class="comments">我还想连日落一起浪费，比如散步</span><br />
+                <span class="comments">一直消磨到星光满天</span><br />
+                <span class="comments">我还要浪费风起的时候</span><br />
+                <span class="comments">坐在走廊发呆，直到你眼中乌云</span><br />
+                <span class="comments">全部被吹到窗外</span><br />
+                <span class="comments">我已经虚度了世界，它经过我</span><br />
+                <span class="comments">疲倦，又像从未被爱过</span><br />
+                <span class="comments">但是明天我还要这样，虚度</span><br />
+                <span class="comments">满目的花草，生活应该像它们一样美好</span><br />
+                <span class="comments">我想和你互相浪费</span><br />
+                <span class="comments">一起虚度短的沉默，长的无意义</span><br />
+                <span class="comments">一起消磨精致而苍老的宇宙</span><br />
+                <span class="comments">比如靠在栏杆上，低头看水的镜子</span><br />
+                <span class="comments">直到所有被虚度的事物</span><br />
+                <span class="comments">在我们身后，长出薄薄的翅膀</span><br />
+                <span class="comments"><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/><span class="space"/>——————至 琳芳</span><br />
+
+
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+<center>
+
+
+</center>
+                        <!-- girlname, I will have fallen in love with you for
+                        <div id="elapseClock" style="display:none"></div>
+                        <a href='#' id="accept">click me if accept me</a>
+                    </div>
+                    <div id="loveu">
+                        Love u forever and ever.<br/>
+                        <div class="signature">- boyname</div>
+                    </div> -->
+                    <img src="love.JPG" onload='if (this.width>190 || this.height>257) if (this.width/this.height>190/257) this.width=190; else this.height=257;'>
+                </div>
+                    <div id="loveu">
+                                诗是抄的，<br/>
+                                但爱你的心是真的。<br/>
+                        <div class="signature">- 李珍义</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 60000);
+            
+            $("#accept").click(function(){
+                $(this).hide();
+                $("#elapseClock").show();
+                var together = new Date();
+                timeElapse(together);
+                setInterval(function () {
+                    timeElapse(together);
+                }, 500);
+            })
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+</body>
+</html>
